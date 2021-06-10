@@ -1,0 +1,5 @@
+<div class="todo-container p-3">
+  <p align="right">Angular 11 + Redux TODO App</p>
+  <app-todo-form (formSubmit)="onTaskSubmitted($event)"></app-todo-form>
+  <app-todo-list [items$]="todos$"></app-todo-list>
+</div>
