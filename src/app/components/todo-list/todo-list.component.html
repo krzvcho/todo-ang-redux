@@ -14,7 +14,7 @@
       <td>{{ item.value.title }}</td>
       <td>{{ item.value.status }}</td>
       <td>{{ item.value.id }}</td>
-      <td>Actions</td>
+      <td><button (click)="triggerRemove(item.value.id)">Remove</button></td>
     </tr>
   </tbody>
 </table>

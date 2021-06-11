@@ -1,5 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { TodoListItem } from 'src/app/models/todo.model';
 
 
 
@@ -9,7 +10,7 @@ import { EventEmitter } from '@angular/core';
   styleUrls: ['./todo-form.component.scss']
 })
 export class TodoFormComponent implements OnInit {
-  @Output() formSubmit: EventEmitter<any> = new EventEmitter();
+  @Output() formSubmit: EventEmitter<TodoListItem> = new EventEmitter();
   public taskName: string = '';
   public taskImportant: boolean = false;
 
@@ -20,7 +21,8 @@ export class TodoFormComponent implements OnInit {
 
   submitTask() {
     this.formSubmit.emit({
-      name: this.taskName,
+      title: this.taskName,
+      status: 'new',
       important: this.taskImportant
     })
   }

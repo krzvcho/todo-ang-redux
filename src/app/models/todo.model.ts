@@ -1,7 +1,8 @@
 export type TodoStatus = 'new' | 'ready' | 'important';
-
 export interface TodoListItem {
-  id: number;
+  id?: number;
   title: string;
-  status: TodoStatus
+  status: TodoStatus,
+  important: boolean
 }
+
